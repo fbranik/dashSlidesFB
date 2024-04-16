@@ -8,29 +8,35 @@ import dash_bootstrap_components as dbc
 # custom imports
 # ...
 # red: #9c1000, main-blue: #325d88, dark-orange: #6e2600
-title = 'Preliminary Experiments'
+title = 'Statistical Analysis 2'
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-introExp = ["Before moving on to the construction of the data-set, a series of experiments and analyses, focusing on different"
-               " aspects of the data generator application, was conducted."]
+comment1 = ["By investigating the distribution of the reported times by all processes, a similarity between them and the "
+         "corresponding normal distribution arises."]
 
-experiments = html.Dl([
-        html.Dt(["Statistical Analysis"]), html.Dd(["- The distribution of the communication times reported by all processes is looked into."]),
-        html.Dt(["Message Size Scale Analysis"]), html.Dd(["- The behaviour of communication is examined for large and small messages."]),
-        html.Dt(["Constant Message Size Scenario"]), html.Dd(["- Some cases were the message size does not change with the working set size are analyzed."]),
-        html.Dt(["Communication-Computation Interference"]), html.Dd(["- Possible interference is explored by imposing different barriers between the two phases of execution."]),
-])
+comment2 = ["This behaviour indicates:"]
+indicationList = html.Ul([
+                    html.Li(["A central tendency around their mean value ",
+                             html.A("(makes the mean a relatively good representative value)",
+                                    style={"color": "seagreen"})]),
+                    html.Li(["A symmetrical and unbiased experimental setup ",
+                             html.A("(positive attributes for building a data-set)",
+                                    style={"color": "seagreen"})]),
+                    ]
+            )
+figure = [html.Br(), html.Img(src="assets/64Nodes_Histogram.png", width="100%")]
+
 text1 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(introExp),
+                                                                html.P(comment1,
+                                                                       className="card-text"),
                                                         ]
                                                 ),
                                         ],
@@ -39,6 +45,16 @@ text1 = html.Div(
                                 ))),
 
                         ], style={"padding-left": "50px", "padding-right": "50px", "width": "100%"}
+                ),
+        ], style={"textAlign"  : "justify", "display": "flex",
+                  "align-items": "left", "justify-content": "left"}
+)
+plot1 = html.Div(
+        [
+                dbc.Row(
+                        [
+                                dbc.Col(figure),
+                        ], style={"margin-left": "188px", "padding-right": "50px", "width": "75%"}
                 ),
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
@@ -49,11 +65,10 @@ text2 = html.Div(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("Analyses and Scenarios",
-                                                               style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                experiments,
+                                                                html.P(comment2,
+                                                                       className="card-text"), indicationList
                                                         ]
                                                 ),
                                         ],
@@ -66,12 +81,11 @@ text2 = html.Div(
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
-
 content = [
         titleBar,
         html.Br(),
-        html.Br(),
-        text1, html.Br(),
-        text2,
+        text1,
+        plot1,
+        text2
 
 ]

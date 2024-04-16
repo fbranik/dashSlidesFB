@@ -13,6 +13,12 @@ slide_order = [
         "dataSizes",
         "executionEnvironment",
         "preliminaryExperiments",
+        "statisticalAnalysis",
+        "statisticalAnalysisDistribution",
+        "statisticalAnalysisMultipleDist",
+        "messageScalesAnalysis",
+        "constantMessageSizes",
+        "commCompInterference",
 
 ]
 slide_orderDict = {
@@ -24,6 +30,13 @@ slide_orderDict = {
         "Data Sizes": "dataSizes",
         "Execution Environment": "executionEnvironment",
         "Preliminary Experiments": "preliminaryExperiments",
+        "Statistical Analysis 1": "statisticalAnalysis",
+        "Statistical Analysis 2": "statisticalAnalysisDistribution",
+        "Statistical Analysis 3": "statisticalAnalysisMultipleDist",
+        "Message Size Scale Analysis": "messageScalesAnalysis",
+        "Constant Message Sizes Scenario": "constantMessageSizes",
+        "Communication/Computation Interference": "commCompInterference",
+
 
 }
 # the text that appears in the tab

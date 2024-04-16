@@ -8,29 +8,29 @@ import dash_bootstrap_components as dbc
 # custom imports
 # ...
 # red: #9c1000, main-blue: #325d88, dark-orange: #6e2600
-title = 'Preliminary Experiments'
+title = 'Statistical Analysis 3'
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-introExp = ["Before moving on to the construction of the data-set, a series of experiments and analyses, focusing on different"
-               " aspects of the data generator application, was conducted."]
+comment1 = ["For sparsely populated nodes, the distributions seem more uniform:"]
+comment2 = ["  This may occur due to less memory contention effects between processes on the same node.  "
+            "In those cases, a larger part of communication can happen in parallel and without delays.  "
+            "This can make communication times less random, thus the more uniform distributions."]
+# plots = [html.Br(), html.Embed(src="assets/dataGeneratorCommPattern.pdf#toolbar=0&navpanes=0&scrollbar=0",
+#                                    height="100%", width="100%")]
 
-experiments = html.Dl([
-        html.Dt(["Statistical Analysis"]), html.Dd(["- The distribution of the communication times reported by all processes is looked into."]),
-        html.Dt(["Message Size Scale Analysis"]), html.Dd(["- The behaviour of communication is examined for large and small messages."]),
-        html.Dt(["Constant Message Size Scenario"]), html.Dd(["- Some cases were the message size does not change with the working set size are analyzed."]),
-        html.Dt(["Communication-Computation Interference"]), html.Dd(["- Possible interference is explored by imposing different barriers between the two phases of execution."]),
-])
+figure = [html.Br(), html.Img(src="assets/smallMessages128ProcsDist.png", width="100%")]
+
 text1 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(introExp),
+                                                                html.P(comment1,
+                                                                       className="card-text"),
                                                         ]
                                                 ),
                                         ],
@@ -43,35 +43,34 @@ text1 = html.Div(
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
-text2 = html.Div(
+
+plotAndComments = html.Div(
         [
                 dbc.Row(
                         [
+                                dbc.Col(figure),
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("Analyses and Scenarios",
-                                                               style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                experiments,
+                                                                html.P(comment2,
+                                                                       className="card-text"),
                                                         ]
                                                 ),
                                         ],
                                         className="mb-3", style={"color": "black", "background": "ghostwhite"},
                                         outline=True
-                                ))),
-
+                                )), style={"textAlign"  : "justify", "display": "flex",
+                                           "align-items": "center", "justify-content": "left"}),
                         ], style={"padding-left": "50px", "padding-right": "50px", "width": "100%"}
                 ),
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
-
 content = [
         titleBar,
         html.Br(),
+        text1,
         html.Br(),
-        text1, html.Br(),
-        text2,
-
+        plotAndComments
 ]
