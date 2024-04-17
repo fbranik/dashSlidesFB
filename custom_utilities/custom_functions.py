@@ -1,8 +1,9 @@
 import requests
 import random
-
+import bs4 as bs
+import dash_html_components as html
 # file for custom functions
-
+import pandas as pd
 
 def my_function():
     return 0
@@ -25,3 +26,11 @@ def new_random_colors():
         textAlign="center",
         margin="auto",
     )
+
+
+def create_table(df):
+    columns, values = df.columns, df.values
+    header = [html.Tr([html.Th(col) for col in columns])]
+    rows = [html.Tr([html.Td(cell) for cell in row]) for row in values]
+    table = [html.Thead(header), html.Tbody(rows)]
+    return table

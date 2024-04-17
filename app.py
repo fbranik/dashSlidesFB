@@ -2,10 +2,11 @@ from dash import html, dcc, Input, Output, State
 import dash_bootstrap_components as dbc
 import os
 import importlib
-
+from sys import path
+path.append(os.getcwd())
+path.append(os.path.abspath(os.path.join(os.getcwd(), os.pardir)))
 from server import app, server
 from presentation import slide_order, prev_text, next_text, slide_orderDict
-
 # add the slides to the object space if they are in the slide order
 for x in os.listdir(os.getcwd() + "/slides"):
     slide_name = x.split(".")[0]
@@ -223,7 +224,7 @@ def update_slide_count(current_slide):
 
 if __name__ == "__main__":
     app.run_server(
-            port=8050,
-            host="localhost",
+            host="0.0.0.0",
+            port=2011,
             debug=False,
     )

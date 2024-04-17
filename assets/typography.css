@@ -8,3 +8,6 @@ body {
     color: white !important;
     border: slategray;
 }
+th, td {
+  padding: 15px;
+}
