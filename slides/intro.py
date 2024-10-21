@@ -37,7 +37,7 @@ row2 = html.Div(
                                                 html.B("Distributed Memory Architectures"),
                                                 html.Br(), html.Br(), html.Br(), html.Br(), html.Br(),
                                                 "Diploma Thesis", html.Br(), html.Br(), html.Br(),
-                                                "April 19, 2024"
+                                                ""
                                         ]),
                                         className="mb-3", style={"color" : "black", "background": "ghostwhite",
                                                                  "border": "ghostwhite"},

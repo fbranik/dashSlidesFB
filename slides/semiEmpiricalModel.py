@@ -12,16 +12,13 @@ title = 'Semi-Empirical Model 1'
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-comment1 = ["The Intel MPI Benchmark was used as a base for a simple semi-empirical model: "]
+comment1 = ["The Intel MPI Benchmark used as a base for a simple semi-empirical model: "]
 figure = [html.Img(src="assets/exchangePattern.png", width="55%")]
-expression = html.Img(src="assets/semiEmpiricalExpression.png", width="70%")
+expression = html.Img(src="assets/semiEmpiricalExpression.png", width="75%")
 comment2 = [html.P("By observing the data from this benchmark's execution, the expression the following"
             " expression was deducted:"), html.Br(),
             html.P(expression, style={"margin-left":"230px"}), html.Br(),
-            html.P("The reason that this model only has 2 independent variables, is that those are"
-                   " the only ones configurable in the context of the chosen benchmark."),
-            html.P("The base case, is an execution of the benchmark for 1 process per node on 64 nodes"
-                   " and for a message size of 4 KiB.")]
+            ]
 
 text1 = html.Div(
         [

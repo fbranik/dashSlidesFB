@@ -70,8 +70,7 @@ text2 = html.Div(
                                                 dbc.CardBody(
                                                         [
 
-                                                                html.P(comment0,
-                                                                       className="card-text"), featureSpace
+                                                             featureSpace
                                                         ]
                                                 ),
                                         ],

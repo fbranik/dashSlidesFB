@@ -8,61 +8,33 @@ import dash_bootstrap_components as dbc
 # custom imports
 # ...
 # red: #9c1000, main-blue: #325d88, dark-orange: #6e2600
-title = "Machine Learning Concepts and Definitions"
+title = 'Basic Modeling Concepts'
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-variables = "In machine learning, the independent variables are called features, and the target variable, the label."
+analyticalModels = ("They have closed form solutions and rely on formal methodologies"
+                    " to represent the behaviour of parallel applications. Based in mathematics and theory.")
 
-decisionTrees = ["Different algorithms, use different methods to find correlation between the features and the label.  ",
-                 html.B("Decision Trees"),
-                 ", makes subsets of the provided data by splitting it based on the values of the features "
-                 "in a way that minimizes a loss function.  To make a prediction, "
-                 "the model considers the given values of the features, matches it to the proper subset and provides the"
-                 " subset's mean value as a prediction. They are prone to overfitting, when each subset of data"
-                 " represents a small and specific portion of the total population. "]
+semiEmpiricalModels = ("The meeting point of theory and observation. "
+                       " They combine data from the execution of a benchmark/data generator program with a theoretical framework.  ")
 
-ensembleMethods = ("These methods use multiple 'weak' learners to construct more accurate models. The two main "
-                   "classes of ensemble models using decision trees are the Random Forest and the various boosting methods,"
-                   " from which, Gradient Boosting was chosen.")
-dataSplit = (" The Training/Testing data split is a necessary process, where the available dataset is randomized and split in two subsets, "
-             "one to be used in training and one for testing. For our models, we used a 60/40% training/testing data split.")
+empiricalModelsML = ("Models that prioritize data over theory. They use a dataset constructed from the execution of"
+                     " a data generator program, for a range of values of selected features/independent variables.  "
+                     "Machine learning algorithms are leveraged to identify patterns, correlations, and predictive"
+                     " factors within the data.")
 
-def1 = html.Div(
-        [
-                dbc.Row(
-                        [
-                                dbc.Col(html.Div(dbc.Card(
-                                        [
-                                                dbc.CardHeader("Variables and Train/Test Data Split",
-                                                               style={"background": "slategray", "color": "white"}),
-                                                dbc.CardBody(
-                                                        [
-                                                                html.P([variables, dataSplit],
-                                                                       className="card-text"),
-                                                        ]
-                                                ),
-                                        ],
-                                        className="mb-3", style={"color": "black", "background": "ghostwhite"},
-                                        outline=True
-                                ))),
 
-                        ], style={"padding-left": "50px", "padding-right": "50px", "width": "100%"}
-                ),
-        ], style={"textAlign"  : "justify", "display": "flex",
-                  "align-items": "left", "justify-content": "left"}
-)
 def2 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("Train/Test Data Split",
+                                                dbc.CardHeader("Analytical Models",
                                                                style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(dataSplit,
+                                                                html.P(analyticalModels,
                                                                        className="card-text"),
                                                         ]
                                                 ),
@@ -76,17 +48,18 @@ def2 = html.Div(
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
+
 def3 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("Decision Trees",
+                                                dbc.CardHeader("Semi-Empirical Models",
                                                                style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(decisionTrees,
+                                                                html.P(semiEmpiricalModels,
                                                                        className="card-text"),
                                                         ]
                                                 ),
@@ -107,11 +80,11 @@ def4 = html.Div(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("Ensemble Methods",
+                                                dbc.CardHeader("Empirical Models - Machine Learning",
                                                                style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(ensembleMethods,
+                                                                html.P(empiricalModelsML,
                                                                        className="card-text"),
                                                         ]
                                                 ),
@@ -125,22 +98,23 @@ def4 = html.Div(
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
-hyperparameterTuning = ("This is a process where various values "
-                        "for the parameters of the structure of a machine learning model are tested, in order to find "
-                        "an optimal configuration.")
+tradeoff = ("When designing and reviewing models, one can observe a pattern when it comes to how complex a model is,"
+            " how well it performs and how many different cases it may cover.  More complex models often "
+            "give great performance for specific scenarios and can be more difficult to interpret."
+            "  Simpler models may be more intuitive, at the cost of performance.")
 
 
-def5 = html.Div(
+def1 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("Hyperparameter Tuning",
+                                                dbc.CardHeader("Complexity/Performance/Range Tradeoff",
                                                                style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(hyperparameterTuning,
+                                                                html.P(tradeoff,
                                                                        className="card-text"),
                                                         ]
                                                 ),
@@ -158,9 +132,8 @@ content = [
         titleBar,
         html.Br(),
         html.Br(),
-        def1,
+        def2,
         def3,
-        def4,
-        def5
+
 
 ]

@@ -13,8 +13,8 @@ titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"fon
                                                                             "background": "slategray"})
 
 comment1 = [""]
-figurePred = [html.Img(src="assets/mpiExchangeMsgSizePrediction.png", width="70%")]
-figureError = [html.Img(src="assets/mpiExchangePredError.png", width="70%")]
+figurePred = [html.Img(src="assets/mpiExchangeMsgSizePrediction.png", width="85%")]
+figureError = [html.Img(src="assets/mpiExchangePredError.png", width="85%")]
 comment2 = ["These plots, sum up the model's performance on the Exchange benchmark data."
             "  The percentage error reaches acceptable levels (±15%).  "
             "However, when trying to predict cases of our data generator application, this model yields percentage errors"
@@ -88,7 +88,8 @@ text2 = html.Div(
 
 content = [
         titleBar,
+        html.Br(),
         plot1,
         html.Br(),
-        plot2, html.Br(),text2
+        plot2, html.Br()
 ]

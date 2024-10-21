@@ -8,62 +8,28 @@ import dash_bootstrap_components as dbc
 # custom imports
 # ...
 # red: #9c1000, main-blue: #325d88, dark-orange: #6e2600
-title = 'Overview'
+title = "Machine Learning Concepts and Definitions"
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-generalGoals = ("Analyze and attempt to model the communication performance of a family of parallel applications."
-                " To achieve this the following steps were followed.")
+decisionTrees = [html.P("- They find correlation between the features by making subsets of the dataset based on feature values."),
+                 html.P("- Prone to overfitting when each subset represents small number of points")]
+ensembleMethods = [html.P("- They use multiple 'weak' learners to construct more accurate models.")]
 
-step1 = ("A configurable parallel application based on the Jacobi kernel was developed."
-         " This application provided data for analysis and modeling.")
+dataSplit = (" The available dataset is randomized and split in two subsets, "
+             "one to be used in training and one for testing.")
 
-step2 = ("Experiments for several different configurations of this application were ran and analyzed, "
-         " in order to gain a better understanding of the communication phase of parallel applications and the "
-         "factors that affect it.")
-
-step3 = ("A data-set was built, by running the data generator application "
-         "for a vast number of different values, for all of its configurable parameters.")
-
-step4 = ("Performance models were constructed, using two different approaches; semi-empirical modeling and machine "
-         "learning algorithms.  These models were evaluated using the appropriate metrics, and by attempting to predict"
-         " the performance of the NAS BT benchmark."
-         )
-row1 = html.Div(
+def2 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("General Goal",
-                                                               style={"background": "peru", "color": "white"}),
-                                                dbc.CardBody(
-                                                        [
-                                                                html.P(generalGoals,
-                                                                       className="card-text"),
-                                                        ]
-                                                ),
-                                        ],
-                                        className="mb-3", style={"color": "black", "background": "ghostwhite"},
-                                        outline=True
-                                ))),
-
-                        ], style={"padding-left": "50px", "padding-right": "50px", "width": "100%"}
-                ),
-        ], style={"textAlign"  : "justify", "display": "flex",
-                  "align-items": "left", "justify-content": "left"}
-)
-row2 = html.Div(
-        [
-                dbc.Row(
-                        [
-                                dbc.Col(html.Div(dbc.Card(
-                                        [
-                                                dbc.CardHeader("Parallel Application Development",
+                                                dbc.CardHeader("Train/Test Data Split",
                                                                style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(step1,
+                                                                html.P(dataSplit,
                                                                        className="card-text"),
                                                         ]
                                                 ),
@@ -77,17 +43,17 @@ row2 = html.Div(
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
-row3 = html.Div(
+def3 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("Preliminary Experiments",
+                                                dbc.CardHeader("Decision Trees",
                                                                style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(step2,
+                                                                html.P(decisionTrees,
                                                                        className="card-text"),
                                                         ]
                                                 ),
@@ -101,17 +67,18 @@ row3 = html.Div(
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
-row4 = html.Div(
+
+def4 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("Data Gathering",
+                                                dbc.CardHeader("Ensemble Methods",
                                                                style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(step3,
+                                                                html.P(ensembleMethods,
                                                                        className="card-text"),
                                                         ]
                                                 ),
@@ -125,17 +92,22 @@ row4 = html.Div(
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
-row5 = html.Div(
+hyperparameterTuning = ("Various values "
+                        "for the parameters of the structure of a model are tested, to find "
+                        "an optimal configuration.")
+
+
+def5 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
-                                                dbc.CardHeader("Model Construction and Evaluation",
+                                                dbc.CardHeader("Hyperparameter Tuning",
                                                                style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(step4,
+                                                                html.P(hyperparameterTuning,
                                                                        className="card-text"),
                                                         ]
                                                 ),
@@ -149,13 +121,14 @@ row5 = html.Div(
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
-
 content = [
         titleBar,
         html.Br(),
-        row1,
-        row2,
-        row3,
-        row4,
-        row5,
+        html.Br(),
+        # def2,
+        # def5,
+        def3,
+        def4,
+        #
+
 ]

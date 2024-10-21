@@ -3,10 +3,12 @@ import dash_bootstrap_components as dbc
 import os
 import importlib
 from sys import path
+
 path.append(os.getcwd())
 path.append(os.path.abspath(os.path.join(os.getcwd(), os.pardir)))
 from server import app, server
 from presentation import slide_order, prev_text, next_text, slide_orderDict
+
 # add the slides to the object space if they are in the slide order
 for x in os.listdir(os.getcwd() + "/slides"):
     slide_name = x.split(".")[0]
@@ -51,7 +53,9 @@ footerStyle = {
         "width"           : "100%"
 }
 containerStyle = {
-        "aspect-ratio": "4 / 3",
+        "overflow":"hidden",
+        "scrollbar-color": "white ghostwhite",
+        "aspect-ratio": "1 / 1",
         "width"       : "100%",
         "height"      : "100%",
         "background"  : "ghostwhite",
@@ -87,10 +91,13 @@ app.layout = dbc.Container(
                                 [
                                         dcc.Location(id="url", refresh=False),
 
-                                        html.Div(id="page-content", style={"width": "100%", "height": "100%",}),
+                                        html.Div(id="page-content", style={"width": "100%", "height": "100%",
+                                                                           "overflow-y":"scroll",
+                                          "overflow-x":"hidden","scrollbar-color": "white ghostwhite","scrollbar-gutter": "stable" }),
                                 ], style={"width": "100%", "height": "100%"}
                         ),
-                        html.Table(
+                         ], style={"height": "90%"}),
+html.Table(
                                 children=[
                                         html.Tr(
                                                 [
@@ -104,7 +111,7 @@ app.layout = dbc.Container(
 
                                                                 dbc.ButtonGroup(
                                                                         [
-                                                                                dbc.Button("April 19, 2024", style={
+                                                                                dbc.Button("", style={
                                                                                         "background": "SlateGray",
                                                                                         "border"    : "SlateGray",
                                                                                         "text-align": "center"},
@@ -124,10 +131,11 @@ app.layout = dbc.Container(
                                                                                         group=True,
                                                                                         children=[
                                                                                                 dbc.DropdownMenuItem(
-                                                                                                        k,
-                                                                                                        href="/" + s,
+                                                                                                        s,
+                                                                                                        href="/" + k, style={"font-size":"10px"},
                                                                                                 )
-                                                                                                for k,s in slide_orderDict.items()
+                                                                                                for k, s in
+                                                                                                []
                                                                                         ],
                                                                                 ),
                                                                                 dbc.Button(">", style={
@@ -145,7 +153,7 @@ app.layout = dbc.Container(
                                                                 className="text-white"),
                                                 ]
                                         )], style=footerStyle,
-                        ), ], style=containerStyle)
+                        ),
         ],
 )
 

@@ -12,8 +12,7 @@ title = 'Statistical Analysis 1'
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-comment1 = ["The following box plots show that there is a range of values of communication time that different processes"
-            " report.  This range seems to grow with the working set size and consequently with the message size."]
+comment1 = ["Gives a first image, but more details are needed."]
 
 # plots = [html.Br(), html.Embed(src="assets/dataGeneratorCommPattern.pdf#toolbar=0&navpanes=0&scrollbar=0",
 #                                    height="100%", width="100%")]
@@ -56,8 +55,8 @@ plot1 = html.Div(
 content = [
         titleBar,
         html.Br(),
-        text1,
         plot1,
+        text1
 
 
 ]

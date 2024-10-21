@@ -8,76 +8,56 @@ import dash_bootstrap_components as dbc
 # custom imports
 # ...
 # red: #9c1000, main-blue: #325d88, dark-orange: #6e2600
-title = 'Message Size Scale Analysis'
+title = "Message Size Scale Analysis"
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-comment1 = [
-        html.P(["- Small Message Sizes ( = [1, 5, 10] * ", html.Img(src="assets/sqrtWSSize.svg", width="31%")," )"]),
-            html.P(["These cases are similar across all the the tested number of messages.  "
-                     "This may allude to the fact that for smaller data sizes, the system can parallelize "
-                     "communication and yields a similar performance for different small message sizes."
-                    "  The amount of parallelization happening, varies across processes, thus the "
-                    "relatively high standard deviation."],
-                   style={"margin-left":"15px"}),
-        html.Br(),
-        html.P(["- Large Message Sizes ( = [50, 100] * ", html.Img(src="assets/sqrtWSSize.svg", width="31%")," )"]),
-            html.P(["The impact of changes in both of the communication parameters, is substantia.  "
-                            "This happens because processes cannot parallelize heavy communicational loads."
-                            "  The lower standard deviation, also supports this."],
-                   style={"margin-left":"15px"}),
-]
-# plots = [html.Br(), html.Embed(src="assets/dataGeneratorCommPattern.pdf#toolbar=0&navpanes=0&scrollbar=0",
-#                                    height="100%", width="100%")]
-figure = [html.Br(), html.Img(src="assets/64_20_VarComm_Plot.png", width="100%")]
+big = [html.Img(src="assets/64_20_VarComm_Plot_Big.png", width="100%")]
+small = [html.Img(src="assets/64_20_VarComm_Plot_Small.png", width="100%")]
 
-text1 = html.Div(
+plot1 = html.Div(
         [
                 dbc.Row(
                         [
-                                dbc.Col(html.Div(dbc.Card(
-                                        [
-                                                dbc.CardBody(
-                                                        [
-                                                                html.P(comment1,
-                                                                       className="card-text"),
-                                                        ]
-                                                ),
-                                        ],
-                                        className="mb-3", style={"color": "black", "background": "ghostwhite"},
-                                        outline=True
-                                ))),
+                                dbc.Col(small),
+                                dbc.Col(big, style={"textAlign"  : "center", "display": "flex",
+                                                    "align-items": "center", "justify-content": "center"}),
 
-                        ], style={"padding-left": "50px", "padding-right": "50px", "width": "100%"}
+                        ], style={"padding-right": "50px", "width": "100%"}
                 ),
-        ], style={"textAlign"  : "justify", "display": "flex",
-                  "align-items": "left", "justify-content": "left"}
+        ], style={"textAlign"  : "center", "display": "flex",
+                  "align-items": "center", "justify-content": "center"}
 )
-
-plotAndComments = html.Div(
+plot2 = html.Div(
         [
                 dbc.Row(
                         [
-                                dbc.Col(figure),
-                                dbc.Col(html.Div(dbc.Card(
-                                        [
-                                                dbc.CardBody(
-                                                        [
-                                                                html.P(comment1,
-                                                                       className="card-text"),
-                                                        ]
-                                                ),
-                                        ],
-                                        className="mb-3", style={"color": "black", "background": "ghostwhite"},
-                                        outline=True
-                                )), style={"textAlign"  : "justify", "display": "flex",
-                                           "align-items": "center", "justify-content": "left"}),
-                        ], style={"padding-left": "50px", "padding-right": "50px", "width": "100%"}
+                                dbc.Col([html.P(["Small Messages", html.Br(), html.Br(),
+                                                 html.P("- Large Standard Deviation"),
+                                                 html.P("- Number of Messages does not make significant changes")], )],
+                                        style={"textAlign"      : "left",
+                                               "display"        : "flex",
+                                               "align-items"    : "center",
+                                               "justify-content": "center"}),
+
+                                dbc.Col([html.P(["Large Messages", html.Br(), html.Br(),
+                                                 html.P("- Small Standard Deviation"),
+                                                 html.P("- Number of Messages has clear effect")], )],
+                                        style={"textAlign"      : "left",
+                                               "display"        : "flex",
+                                               "align-items"    : "center",
+                                               "justify-content": "center"}),
+
+                        ], style={"padding-right": "50px", "width": "100%"}
                 ),
-        ], style={"textAlign"  : "justify", "display": "flex",
-                  "align-items": "left", "justify-content": "left"}
+        ], style={"textAlign"  : "center", "display": "flex",
+                  "align-items": "center", "justify-content": "center"}
 )
+
 content = [
         titleBar,
-        plotAndComments
+        html.Br(),
+        plot1,
+        html.Hr(),
+        plot2,
 ]

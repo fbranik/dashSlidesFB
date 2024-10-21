@@ -11,11 +11,10 @@ import dash_bootstrap_components as dbc
 title = 'Statistical Analysis 3'
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
+figureExplaination = html.Img(src="assets/multipleDistribExplained.png", width="100%")
 
 comment1 = ["For sparsely populated nodes, the distributions seem more uniform:"]
-comment2 = ["  This may occur due to less memory contention effects between processes on the same node.  "
-            "In those cases, a larger part of communication can happen in parallel and without delays.  "
-            "This can make communication times less random, thus the more uniform distributions."]
+comment2 = [html.P("Possible explanation:"), figureExplaination]
 # plots = [html.Br(), html.Embed(src="assets/dataGeneratorCommPattern.pdf#toolbar=0&navpanes=0&scrollbar=0",
 #                                    height="100%", width="100%")]
 

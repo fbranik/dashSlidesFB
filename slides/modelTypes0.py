@@ -133,8 +133,6 @@ content = [
         html.Br(),
         html.Br(),
         def2,
-        def3,
-        def4,
-        def1
+
 
 ]

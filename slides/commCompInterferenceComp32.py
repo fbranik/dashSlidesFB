@@ -8,29 +8,30 @@ import dash_bootstrap_components as dbc
 # custom imports
 # ...
 # red: #9c1000, main-blue: #325d88, dark-orange: #6e2600
-title = 'Execution Environment'
+title = "Communication-Computation Interference 4"
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-arisComment = ["The system used for the execution of the data generator application, was the fat-tree cluster of ARIS."
-               "  One important configuration, is the mapping of the available processes into MPI ranks."
-               "  For this, the ", html.I("map-by node")," option was chosen which shuffles MPI ranks alternately between processors and nodes."
-               "  An example of two fully populated ARIS nodes using this mapping, can be seen bellow:"]
+comment1 = ["Increasing the intensity of computation does not seem to change the behaviour seen with"
+            " Compute Bound 16."]
+comment2 = []
 
-# arisFigure = [html.Br(), html.Embed(src="assets/dataGeneratorCommPattern.pdf#toolbar=0&navpanes=0&scrollbar=0",
-#                                    height="100%", width="100%")]
+figure = [html.Br(), html.Img(src="assets/ComputeBound32_64Barriers.png", width="70%")]
 
-arisFigure = [html.Br(), html.Img(src="assets/arisNodeOrder.png", width="100%")]
-
-text1 = html.Div(
+insightsGained = html.Ul(
+        html.Li("")
+)
+text2 = html.Div(
         [
                 dbc.Row(
                         [
                                 dbc.Col(html.Div(dbc.Card(
                                         [
+                                                dbc.CardHeader("Insights Gained",
+                                                               style={"background": "slategray", "color": "white"}),
                                                 dbc.CardBody(
                                                         [
-                                                                html.P(arisComment,
+                                                                html.P(comment2,
                                                                        className="card-text"),
                                                         ]
                                                 ),
@@ -44,22 +45,40 @@ text1 = html.Div(
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
-arisFigure = html.Div(
+text1 = html.Div(
         [
                 dbc.Row(
                         [
-                                dbc.Col(arisFigure),
+                                dbc.Col(html.Div(dbc.Card(
+                                        [
+                                                dbc.CardBody(
+                                                        [
+                                                                html.P(comment1,
+                                                                       className="card-text"),
+                                                        ]
+                                                ),
+                                        ],
+                                        className="mb-3", style={"color": "black", "background": "ghostwhite"},
+                                        outline=True
+                                ))),
+
                         ], style={"padding-left": "50px", "padding-right": "50px", "width": "100%"}
                 ),
         ], style={"textAlign"  : "justify", "display": "flex",
                   "align-items": "left", "justify-content": "left"}
 )
 
+plotAndComments = html.Div(
+        [
+                dbc.Row(
+                        [
+                                dbc.Col(figure),
+                        ], style={"padding-left": "50px", "padding-right": "50px", "width": "100%"}
+                ),
+        ], style={"textAlign"  : "center", "display": "flex",
+                  "align-items": "center", "justify-content": "center"}
+)
 content = [
         titleBar,
-        html.Br(),
-        html.Br(),
-        text1,
-        arisFigure,
-
+        plotAndComments,
 ]

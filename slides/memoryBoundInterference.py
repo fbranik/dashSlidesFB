@@ -17,7 +17,7 @@ comment1 = ["As mentioned, performance for smaller messages is more susceptible 
 # plots = [html.Br(), html.Embed(src="assets/dataGeneratorCommPattern.pdf#toolbar=0&navpanes=0&scrollbar=0",
 #                                    height="100%", width="100%")]
 
-figure = [html.Br(), html.Img(src="assets/MemoryBound_64Barriers.png", width="60%")]
+figure = [html.Br(), html.Img(src="assets/MemoryBound_64Barriers.png", width="70%")]
 
 
 text1 = html.Div(
@@ -55,7 +55,5 @@ plotAndComments = html.Div(
 )
 content = [
         titleBar,
-        html.Br(),
         plotAndComments,
-        text1
 ]

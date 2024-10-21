@@ -26,7 +26,6 @@ indicationList = html.Ul([
                     ]
             )
 figure = [html.Br(), html.Img(src="assets/64Nodes_Histogram.png", width="100%")]
-
 text1 = html.Div(
         [
                 dbc.Row(
@@ -84,7 +83,6 @@ text2 = html.Div(
 content = [
         titleBar,
         html.Br(),
-        text1,
         plot1,
         text2
 

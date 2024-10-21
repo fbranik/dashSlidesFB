@@ -17,6 +17,8 @@ from fs.filesize import binary as binarySize
 import pandas as pd
 
 from dashSlidesFB.custom_utilities.custom_functions import create_table
+from time import sleep
+mediaFolder = "/Users/fbran/Desktop/"
 
 features = ['Working Set Size', 'Computational Load Type', 'Message Size', 'Number of Messages',
             'Number of Nodes', 'Processes per Node']
@@ -187,14 +189,44 @@ def generateMeasurementsComparisonChart(colorMeasurementsComparison, messageSize
                       color=plottedDataDf[colorMeasurementsComparison],
                       color_discrete_sequence=px.colors.qualitative.Vivid, hover_data=features,
                       category_orders=categoryOrders)
+    fig1.update_traces(marker=dict(size=12,))
 
     figMeasurementsComparison = go.Figure(data=fig2.data + fig1.data)
     figMeasurementsComparison.update_layout(
             uirevision=True,
             autosize=False,
+            width=1600,
+            height=1500,
+            xaxis_title='Measured Communication Time', font_family="CMU Serif",
+
+            yaxis_title='Predicted Time', template="ggplot2",
+            coloraxis={"colorscale": [(0, "blue"), (0.5, "purple"), (1, "red")]},
+            font=dict(size=30),
+    )
+    figMeasurementsComparison.update_layout({
+            "paper_bgcolor": "rgba(0, 0, 0, 0)",
+    })
+    figMeasurementsComparison.update_layout(
+            legend=dict(traceorder='normal',
+                        title_text=colorMeasurementsComparison,
+                        font_size=25,
+                        orientation="h",
+                        yanchor="bottom",
+                        y=1.02,
+                        xanchor="left",
+                        x=0)
+    )
+
+    figMeasurementsComparison.write_image(mediaFolder + f"{messageSizeScale.replace(' ', '_')}_{colorMeasurementsComparison.replace(' ', '_')}_ModelVsActual.pdf")
+    sleep(4)
+    figMeasurementsComparison.write_image(mediaFolder + f"{messageSizeScale.replace(' ', '_')}_{colorMeasurementsComparison.replace(' ', '_')}_ModelVsActual.pdf")
+    figMeasurementsComparison.update_layout(
+            uirevision=True,
+            autosize=False,
             width=800,
             height=700,
-            xaxis_title='Measured Communication Time',
+            xaxis_title='Measured Communication Time', font_family="CMU Serif",
+
             yaxis_title='Predicted Time', template="ggplot2",
             coloraxis={"colorscale": [(0, "blue"), (0.5, "purple"), (1, "red")]},
             font=dict(size=16),
@@ -204,7 +236,7 @@ def generateMeasurementsComparisonChart(colorMeasurementsComparison, messageSize
     })
     figMeasurementsComparison.update_layout(
             legend=dict(traceorder='normal',
-                        title_text='Processes per Node',
+                        title_text=colorMeasurementsComparison,
                         font_size=14,
                         orientation="h",
                         yanchor="bottom",
@@ -212,10 +244,6 @@ def generateMeasurementsComparisonChart(colorMeasurementsComparison, messageSize
                         xanchor="left",
                         x=0)
     )
-
-    # figMeasurementsComparison.write_image(mediaFolder + f"bigMessagesModel_coloredPpN.pdf")
-    # time.sleep(4)
-    # figMeasurementsComparison.write_image(mediaFolder + f"bigMessagesModel_coloredPpN.pdf")
     return figMeasurementsComparison
 
 

@@ -70,8 +70,6 @@ text2 = html.Div(
 content = [
         titleBar,
         html.Br(),
-        html.Br(),
-        text1, html.Br(),
         text2,
 
 ]
