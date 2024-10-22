@@ -16,7 +16,7 @@ from plotly.subplots import make_subplots
 from fs.filesize import binary as binarySize
 import pandas as pd
 
-from ..custom_utilities.custom_functions import create_table
+from custom_utilities.custom_functions import create_table
 
 tradeoffFig = html.Img(src="assets/btVsDGA.png", width="70%%")
 modelResults = dbc.Row(

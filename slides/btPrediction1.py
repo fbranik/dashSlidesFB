@@ -16,7 +16,7 @@ from plotly.subplots import make_subplots
 from fs.filesize import binary as binarySize
 import pandas as pd
 
-from ..custom_utilities.custom_functions import create_table
+from custom_utilities.custom_functions import create_table
 from time import sleep
 mediaFolder = "/Users/fbran/Desktop/"
 features = ['Working Set Size', 'Computational Load Type', 'Message Size', 'Number of Messages',

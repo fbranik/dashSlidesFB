@@ -16,7 +16,7 @@ from plotly.subplots import make_subplots
 from fs.filesize import binary as binarySize
 import pandas as pd
 
-from ..custom_utilities.custom_functions import create_table
+from custom_utilities.custom_functions import create_table
 
 tradeoffFig = html.P("Thank you for your time and attention.")
 q = html.P("Questions?")
