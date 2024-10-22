@@ -37,6 +37,8 @@ row2 = html.Div(
                                                 html.B("Distributed Memory Architectures"),
                                                 html.Br(), html.Br(), html.Br(), html.Br(), html.Br(),
                                                 "Diploma Thesis", html.Br(), html.Br(), html.Br(),
+                                                "To navigate please use the arrow keys or the "
+                                                "navbar in the bottom right corner", html.Br(), html.Br(), html.Br(),
                                                 ""
                                         ]),
                                         className="mb-3", style={"color" : "black", "background": "ghostwhite",

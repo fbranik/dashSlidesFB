@@ -93,7 +93,7 @@ app.layout = dbc.Container(
 
                                         html.Div(id="page-content", style={"width": "100%", "height": "100%",
                                                                            "overflow-y":"scroll",
-                                          "overflow-x":"hidden","scrollbar-color": "white ghostwhite","scrollbar-gutter": "stable" }),
+                                          "overflow-x":"hidden","scrollbar-color": "grey ghostwhite","scrollbar-gutter": "stable" }),
                                 ], style={"width": "100%", "height": "100%"}
                         ),
                          ], style={"height": "90%"}),
