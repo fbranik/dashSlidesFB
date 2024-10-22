@@ -138,11 +138,6 @@ def generateMeasurementsComparisonChart(colorMeasurementsComparison):
                         x=0)
     )
 
-    figMeasurementsComparison.write_image(
-        mediaFolder + f"trainSmallTestBig_{colorMeasurementsComparison.replace(' ', '_')}_ModelVsActual.pdf")
-    sleep(4)
-    figMeasurementsComparison.write_image(
-        mediaFolder + f"trainSmallTestBig_{colorMeasurementsComparison.replace(' ', '_')}_ModelVsActual.pdf")
 
     figMeasurementsComparison.update_layout(
             uirevision=True,

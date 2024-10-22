@@ -137,11 +137,7 @@ def generateMeasurementsComparisonChart(colorMeasurementsComparison):
                         xanchor="left",
                         x=0)
     )
-    figMeasurementsComparison.write_image(
-            mediaFolder + f"main_{colorMeasurementsComparison.replace(' ', '_')}_ModelVsActual.pdf")
-    sleep(4)
-    figMeasurementsComparison.write_image(
-            mediaFolder + f"main_{colorMeasurementsComparison.replace(' ', '_')}_ModelVsActual.pdf")
+
     figMeasurementsComparison.update_layout(
             uirevision=True,
             autosize=False,
