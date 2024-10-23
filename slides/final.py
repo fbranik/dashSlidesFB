@@ -27,27 +27,27 @@ modelResults = dbc.Row(
 
                         dbc.Col([tradeoffFig],
                                 style={"padding"    : "20px", "textAlign": "center", "display": "flex",
-                                       "align-items": "center", "justify-content": "center", "font-size" : "50px"}),
+                                       "align-items": "center", "justify-content": "center", "font-size": "50px"}),
                 ]),
                 dbc.Row([
 
-                        dbc.Col([ q],
+                        dbc.Col([q],
                                 style={"padding"    : "20px", "textAlign": "center", "display": "flex",
-                                       "align-items": "center", "justify-content": "center","font-size" : "50px"}),
+                                       "align-items": "center", "justify-content": "center", "font-size": "50px"}),
                 ]),
         ])
 
 title = ''
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={
-                                                                            "background": "slategray"})
+        "background": "slategray"})
 
 content = [
         titleBar,
         html.Br(),
         html.Br(),
         html.Br(),
-        html.Br(),     html.Br(),
-        html.Br(),     html.Br(),
+        html.Br(), html.Br(),
+        html.Br(), html.Br(),
         html.Br(),
         modelResults
 

@@ -82,6 +82,6 @@ content = [
         html.Br(),
         html.Br(),
         dbc.Row([dbc.Col([messagePassingT, html.Br(),
-        messagePassing]), dbc.Col()])
+                          messagePassing]), dbc.Col()])
 
 ]

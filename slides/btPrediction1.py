@@ -18,6 +18,7 @@ import pandas as pd
 
 from custom_utilities.custom_functions import create_table
 from time import sleep
+
 mediaFolder = "/Users/fbran/Desktop/"
 features = ['Working Set Size', 'Computational Load Type', 'Message Size', 'Number of Messages',
             'Number of Nodes', 'Processes per Node']
@@ -27,7 +28,6 @@ times = ['Computation Time', 'Measured Communication Time',
 modelScenario = "BtPredict"
 
 arisDatasetToTrain = pd.read_csv(f'assets/btPredictionsMaximum.csv', sep=',')
-
 
 arisDatasetToTrain['Computational_Load_Type'] = arisDatasetToTrain['Computational_Load_Type'].str.replace('_', ' ')
 arisDatasetToTrain.columns = arisDatasetToTrain.columns.str.replace('_', ' ')
@@ -105,7 +105,7 @@ def generateMeasurementsComparisonChart(colorMeasurementsComparison):
                       color=plottedDataDf[colorMeasurementsComparison],
                       color_discrete_sequence=px.colors.qualitative.Vivid, hover_data=features,
                       category_orders=categoryOrders)
-    fig1.update_traces(marker=dict(size=12,))
+    fig1.update_traces(marker=dict(size=12, ))
 
     figMeasurementsComparison = go.Figure(data=fig2.data + fig1.data)
 
@@ -134,13 +134,12 @@ def generateMeasurementsComparisonChart(colorMeasurementsComparison):
                         x=0)
     )
 
-
     figMeasurementsComparison.update_layout(
             uirevision=True,
             autosize=False,
             width=800,
             height=700,
-            xaxis_title='Measured Communication Time',            font_family="CMU Serif",
+            xaxis_title='Measured Communication Time', font_family="CMU Serif",
 
             yaxis_title='Predicted Time', template="ggplot2",
             coloraxis={"colorscale": [(0, "blue"), (0.5, "purple"), (1, "red")]},
@@ -161,4 +160,3 @@ def generateMeasurementsComparisonChart(colorMeasurementsComparison):
     )
 
     return figMeasurementsComparison
-

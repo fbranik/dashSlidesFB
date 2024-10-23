@@ -8,11 +8,12 @@ body {
     color: white !important;
     border: slategray;
 }
+
 th, td {
-  padding: 15px;
+    padding: 15px;
 }
 
 .vl {
-  border-left: 6px slategray;
-  height: 500px;
+    border-left: 6px slategray;
+    height: 500px;
 }

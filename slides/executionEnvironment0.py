@@ -12,7 +12,7 @@ title = 'Execution Environment'
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-arisComment = ["Example of 2 Aris Nodes using the ", html.I("map-by node")," option:"]
+arisComment = ["Example of 2 Aris Nodes using the ", html.I("map-by node"), " option:"]
 
 # arisFigure = [html.Br(), html.Embed(src="assets/dataGeneratorCommPattern.pdf#toolbar=0&navpanes=0&scrollbar=0",
 #                                    height="100%", width="100%")]

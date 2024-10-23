@@ -16,8 +16,8 @@ comment1 = ["The Intel MPI Benchmark used as a base for a simple semi-empirical 
 figure = [html.Img(src="assets/exchangePattern.png", width="55%")]
 expression = html.Img(src="assets/semiEmpiricalExpression.png", width="75%")
 comment2 = [html.P("By observing the data from this benchmark's execution, the expression the following"
-            " expression was deducted:"), html.Br(),
-            html.P(expression, style={"margin-left":"230px"}), html.Br(),
+                   " expression was deducted:"), html.Br(),
+            html.P(expression, style={"margin-left": "230px"}), html.Br(),
             ]
 
 text1 = html.Div(
@@ -59,7 +59,7 @@ text2 = html.Div(
                                 dbc.Col(html.Div(dbc.Card(
                                         [
                                                 dbc.CardBody(
-                                                            comment2
+                                                        comment2
                                                 ),
                                         ],
                                         className="mb-3", style={"color": "black", "background": "ghostwhite"},

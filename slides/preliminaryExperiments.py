@@ -12,14 +12,19 @@ title = 'Preliminary Experiments'
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-introExp = ["Before moving on to the construction of the data-set, a series of experiments and analyses, focusing on different"
-               " aspects of the data generator application, was conducted."]
+introExp = [
+        "Before moving on to the construction of the data-set, a series of experiments and analyses, focusing on different"
+        " aspects of the data generator application, was conducted."]
 
 experiments = html.Dl([
-        html.Dt(["Statistical Analysis"]), html.Dd(["- The distribution of the communication times reported by all processes is looked into."]),
-        html.Dt(["Message Size Scale Analysis"]), html.Dd(["- The behaviour of communication is examined for large and small messages."]),
-        html.Dt(["Constant Message Size Scenario"]), html.Dd(["- Some cases were the message size does not change with the working set size are analyzed."]),
-        html.Dt(["Communication-Computation Interference"]), html.Dd(["- Possible interference is explored by imposing different barriers between the two phases of execution."]),
+        html.Dt(["Statistical Analysis"]),
+        html.Dd(["- The distribution of the communication times reported by all processes is looked into."]),
+        html.Dt(["Message Size Scale Analysis"]),
+        html.Dd(["- The behaviour of communication is examined for large and small messages."]),
+        html.Dt(["Constant Message Size Scenario"]),
+        html.Dd(["- Some cases were the message size does not change with the working set size are analyzed."]),
+        html.Dt(["Communication-Computation Interference"]), html.Dd([
+                                                                             "- Possible interference is explored by imposing different barriers between the two phases of execution."]),
 ])
 text1 = html.Div(
         [

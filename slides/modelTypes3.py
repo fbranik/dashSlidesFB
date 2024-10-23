@@ -23,7 +23,6 @@ empiricalModelsML = ("Models that prioritize data over theory. They use a datase
                      "Machine learning algorithms are leveraged to identify patterns, correlations, and predictive"
                      " factors within the data.")
 
-
 def2 = html.Div(
         [
                 dbc.Row(

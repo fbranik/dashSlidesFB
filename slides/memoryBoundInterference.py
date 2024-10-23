@@ -12,13 +12,13 @@ title = "Communication-Computation Interference 2"
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-comment1 = ["As mentioned, performance for smaller messages is more susceptible to changes. This can also be seen in these cases"
-            ", where imposing barriers in beneficial for smaller messages but has almost no effect for large message cases."]
+comment1 = [
+        "As mentioned, performance for smaller messages is more susceptible to changes. This can also be seen in these cases"
+        ", where imposing barriers in beneficial for smaller messages but has almost no effect for large message cases."]
 # plots = [html.Br(), html.Embed(src="assets/dataGeneratorCommPattern.pdf#toolbar=0&navpanes=0&scrollbar=0",
 #                                    height="100%", width="100%")]
 
 figure = [html.Br(), html.Img(src="assets/MemoryBound_64Barriers.png", width="70%")]
-
 
 text1 = html.Div(
         [

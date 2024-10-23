@@ -14,11 +14,18 @@ titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"fon
 
 insightsGained = [
         html.Ul([
-                html.Li(["The mean can be used as a representative value.  ", html.Br(),"(Statistical Analysis)"]),  html.Br(),
-                html.Li(["For smaller messages the number of messages is not relevant.  ", html.Br(),"(Message Size Scale Analysis)"]),    html.Br(),
-                html.Li(["Communication and Computation resource contention, can translate into significant change of performance.  ", html.Br(),"(Constant Message Size Scenario)"]), html.Br(),
-                html.Li(["This interference is likely to happen for smaller communication or memory intensive computation.  ", html.Br(),"(Communication-Computation Interference)"]), html.Br(),
-                html.Li(["Focused, local barriers, may be beneficial to performance under these conditions.  ", html.Br(),"(Communication-Computation Interference)"]), html.Br(),
+                html.Li(["The mean can be used as a representative value.  ", html.Br(), "(Statistical Analysis)"]),
+                html.Br(),
+                html.Li(["For smaller messages the number of messages is not relevant.  ", html.Br(),
+                         "(Message Size Scale Analysis)"]), html.Br(),
+                html.Li([
+                                "Communication and Computation resource contention, can translate into significant change of performance.  ",
+                                html.Br(), "(Constant Message Size Scenario)"]), html.Br(),
+                html.Li([
+                                "This interference is likely to happen for smaller communication or memory intensive computation.  ",
+                                html.Br(), "(Communication-Computation Interference)"]), html.Br(),
+                html.Li(["Focused, local barriers, may be beneficial to performance under these conditions.  ",
+                         html.Br(), "(Communication-Computation Interference)"]), html.Br(),
                 # html.Li(
                 #     "As the working set size grows (and thus computation time), so does communication time, even in some cases "
                 #     " where communication remains constant."),

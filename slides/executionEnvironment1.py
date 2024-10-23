@@ -18,7 +18,7 @@ highlightComment = html.Ul([
         html.Li(html.B("Number of Computing Nodes"),
                 style={"color": "#6083FE"}),
         html.Li(html.B("Processes per Node"),
-                style={"color": "peru"}),html.Br(),
+                style={"color": "peru"}), html.Br(),
 
 ])
 arisFigure = [html.Br(), html.Img(src="assets/arisNodeOrderHighlight.png", width="100%")]

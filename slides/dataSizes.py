@@ -13,10 +13,11 @@ titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"fon
                                                                             "background": "slategray"})
 
 comment1 = "Two of the previous five parameters are data sizes; the working set size and the message size."
-comment2 =  ("For the working set size, there is a choice to be made on how it changes as the number of total processes"
+comment2 = ("For the working set size, there is a choice to be made on how it changes as the number of total processes"
             " grows.  There are two main approaches: ")
 scaling = html.Ul([
-        html.Li([html.B("Strong Scaling, "), "where the total problem size remains constant as the number of processes grows."]),
+        html.Li([html.B("Strong Scaling, "),
+                 "where the total problem size remains constant as the number of processes grows."]),
         html.Li([html.B("Weak Scaling, "),
                  "where the total problem size changes in accordance to the growing resources."]),
 ])
@@ -39,7 +40,7 @@ text1 = html.Div(
                                                 dbc.CardBody(
                                                         [
                                                                 html.P(comment1), html.Br(), html.P(comment2),
-                                                                scaling,  html.P(comment3),
+                                                                scaling, html.P(comment3),
                                                                 html.Br(), html.P(comment4)
                                                         ]
                                                 ),

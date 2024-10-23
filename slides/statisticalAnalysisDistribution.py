@@ -12,19 +12,20 @@ title = 'Statistical Analysis 2'
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-comment1 = ["By investigating the distribution of the reported times by all processes, a similarity between them and the "
-         "corresponding normal distribution arises."]
+comment1 = [
+        "By investigating the distribution of the reported times by all processes, a similarity between them and the "
+        "corresponding normal distribution arises."]
 
 comment2 = ["This behaviour indicates:"]
 indicationList = html.Ul([
-                    html.Li(["A central tendency around their mean value ",
-                             html.A("(makes the mean a relatively good representative value)",
-                                    style={"color": "seagreen"})]),
-                    html.Li(["A symmetrical and unbiased experimental setup ",
-                             html.A("(positive attributes for building a data-set)",
-                                    style={"color": "seagreen"})]),
-                    ]
-            )
+        html.Li(["A central tendency around their mean value ",
+                 html.A("(makes the mean a relatively good representative value)",
+                        style={"color": "seagreen"})]),
+        html.Li(["A symmetrical and unbiased experimental setup ",
+                 html.A("(positive attributes for building a data-set)",
+                        style={"color": "seagreen"})]),
+]
+)
 figure = [html.Br(), html.Img(src="assets/64Nodes_Histogram.png", width="100%")]
 text1 = html.Div(
         [

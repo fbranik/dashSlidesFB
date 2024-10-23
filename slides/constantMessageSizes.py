@@ -33,7 +33,8 @@ plot2 = html.Div(
                 dbc.Row(
                         [
                                 dbc.Col([html.P(["Small Messages", html.Br(), html.Br(),
-                                                 html.B("- Communication Time changes with the working set size"),], )],
+                                                 html.B(
+                                                     "- Communication Time changes with the working set size"), ], )],
                                         style={"textAlign"      : "left",
                                                "display"        : "flex",
                                                "align-items"    : "center",

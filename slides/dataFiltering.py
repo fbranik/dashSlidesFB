@@ -36,7 +36,7 @@ text1 = html.Div(
                                                                                                                 "align-items"    : "center",
                                                                                                                 "justify-content": "center"}),
                                                                 html.Br(), html.P(comment2,
-                                                                       className="card-text")
+                                                                                  className="card-text")
                                                         ]
                                                 ),
                                         ],
@@ -53,7 +53,8 @@ comment0 = "To construct the data-set, the feature space was swept for the follo
 featureSpace = html.Ul([
         html.Li("Working Set Size (per process) = [2MiB, 8MiB, 32MiB, 128MiB, 256MiB, 512MiB]"),
         html.Br(), html.Li("Computational Load Type = ['Memory Bound', 'Compute Bound']"),
-        html.Br(), html.Li(["Message Size = [1, 5, 10, 50, 100] * ", html.Img(src="assets/sqrtWSSize.svg", width="18%")]),
+        html.Br(),
+        html.Li(["Message Size = [1, 5, 10, 50, 100] * ", html.Img(src="assets/sqrtWSSize.svg", width="18%")]),
         html.Br(), html.Li("Number of Messages = [2, 4, 8]"),
         html.Br(), html.Li("Number of Computing Nodes = [4, 8, 16, 32, 64]"),
         html.Br(), html.Li("Processes per Node = [2, 4, 8, 16, 20]")
@@ -70,7 +71,7 @@ text2 = html.Div(
                                                 dbc.CardBody(
                                                         [
 
-                                                             featureSpace
+                                                                featureSpace
                                                         ]
                                                 ),
                                         ],

@@ -34,11 +34,13 @@ for time:
 
 simplifiedCode = html.Pre(["""
  for time:
-     communication(""", html.B("NumberOfMessages, MessageSize", style={"font-size": "20px","text-decoration": "underline","color":"peru"}),""")
+     communication(""", html.B("NumberOfMessages, MessageSize",
+                               style={"font-size": "20px", "text-decoration": "underline", "color": "peru"}), """)
 
      MPI_Waitall(MessagesToSend,MessagesToRecv)
 
-     computation(""", html.B("WorkingSetSize, NumberOfExtraOperations", style={"font-size": "20px","text-decoration": "underline","color":"peru"}),""")
+     computation(""", html.B("WorkingSetSize, NumberOfExtraOperations",
+                             style={"font-size": "20px", "text-decoration": "underline", "color": "peru"}), """)
                  """], style={"font-size": "18px"})
 
 appFigure = [html.Br(), html.Img(src="assets/dataGeneratorCommPattern.png", width="100%")]

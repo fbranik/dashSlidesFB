@@ -15,9 +15,11 @@ titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"fon
 introExp = ["The available dataset, was used in three different ways to create Gradient Boosting models."]
 
 experiments = html.Dl([
-        html.Dt(["Message Size Models"]), html.Dd(["- Two different sub-models were compiled, one for each message size scale."]),
-        html.Dt(["Train Small/Test Big Model"]), html.Dd(["- The model is trained only on data from [4, 8, 16] nodes and performance is checked for"
-                                                          " [32, 64] nodes."]),
+        html.Dt(["Message Size Models"]),
+        html.Dd(["- Two different sub-models were compiled, one for each message size scale."]),
+        html.Dt(["Train Small/Test Big Model"]),
+        html.Dd(["- The model is trained only on data from [4, 8, 16] nodes and performance is checked for"
+                 " [32, 64] nodes."]),
         html.Dt(["Main Model"]), html.Dd(["- This model uses the whole dataset."]),
 ])
 text1 = html.Div(

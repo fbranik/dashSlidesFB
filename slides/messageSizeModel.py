@@ -17,6 +17,7 @@ from fs.filesize import binary as binarySize
 import pandas as pd
 from custom_utilities.custom_functions import create_table
 from time import sleep
+
 mediaFolder = "/Users/fbran/Desktop/"
 
 features = ['Working Set Size', 'Computational Load Type', 'Message Size', 'Number of Messages',
@@ -72,7 +73,7 @@ modelResults = dbc.Row(
                         dbc.Col([dcc.Graph(id="graphMeasurementsComparison")],
                                 style={"padding"    : "20px", "textAlign": "center", "display": "flex",
                                        "align-items": "center", "justify-content": "center"}),
-                        dbc.Col([html.Table(id="featureImportancesMessageSizeScale",)],
+                        dbc.Col([html.Table(id="featureImportancesMessageSizeScale", )],
                                 style={"padding"    : "20px", "textAlign": "left", "display": "flex",
                                        "align-items": "center", "justify-content": "center"}),
                 ]),
@@ -188,7 +189,7 @@ def generateMeasurementsComparisonChart(colorMeasurementsComparison, messageSize
                       color=plottedDataDf[colorMeasurementsComparison],
                       color_discrete_sequence=px.colors.qualitative.Vivid, hover_data=features,
                       category_orders=categoryOrders)
-    fig1.update_traces(marker=dict(size=12,))
+    fig1.update_traces(marker=dict(size=12, ))
 
     figMeasurementsComparison = go.Figure(data=fig2.data + fig1.data)
     figMeasurementsComparison.update_layout(

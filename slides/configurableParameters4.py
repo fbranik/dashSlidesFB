@@ -13,9 +13,13 @@ titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"fon
                                                                             "background": "slategray"})
 comment1 = "Data Generator Application Parameters: "
 configurableParameters = html.Ul([
-        html.Li(["Working Set Size (per process)", html.Br(), html.P("- grows with the Number of total Processes to follow Weak Scaling")]),
-        html.Li(["Number of Computing Operations (per element)", html.Br(), html.P([" - viewed as", html.B(" Computation Load Type"), " where: 1 op. = Memory Bound, X ops. = Compute Bound X"])]),
-        html.Li(["Message Size", html.Br(), html.P("- equal to a multiple of the square root of the Working Set Size")]),
+        html.Li(["Working Set Size (per process)", html.Br(),
+                 html.P("- grows with the Number of total Processes to follow Weak Scaling")]),
+        html.Li(["Number of Computing Operations (per element)", html.Br(),
+                 html.P([" - viewed as", html.B(" Computation Load Type"),
+                         " where: 1 op. = Memory Bound, X ops. = Compute Bound X"])]),
+        html.Li(["Message Size", html.Br(),
+                 html.P("- equal to a multiple of the square root of the Working Set Size")]),
         html.Li("Number of Messages"), html.Br(),
 ])
 

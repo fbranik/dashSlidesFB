@@ -23,7 +23,6 @@ empiricalModelsML = ("Models that prioritize data over theory. They use a datase
                      "Machine learning algorithms are leveraged to identify patterns, correlations, and predictive"
                      " factors within the data.")
 
-
 def2 = html.Div(
         [
                 dbc.Row(
@@ -103,7 +102,6 @@ tradeoff = ("When designing and reviewing models, one can observe a pattern when
             "give great performance for specific scenarios and can be more difficult to interpret."
             "  Simpler models may be more intuitive, at the cost of performance.")
 
-
 def1 = html.Div(
         [
                 dbc.Row(
@@ -134,6 +132,5 @@ content = [
         html.Br(),
         def2,
         def3,
-
 
 ]

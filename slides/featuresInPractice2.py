@@ -58,5 +58,4 @@ content = [
         plot1,
         # text1
 
-
 ]

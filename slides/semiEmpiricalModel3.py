@@ -59,7 +59,6 @@ plot2 = html.Div(
                   "align-items": "center", "justify-content": "center"}
 )
 
-
 content = [
         titleBar,
         html.Br(),

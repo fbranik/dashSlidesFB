@@ -3,11 +3,13 @@ import dash_bootstrap_components as dbc
 import os
 import importlib
 from sys import path
+from flask import request
 
 path.append(os.getcwd())
 path.append(os.path.abspath(os.path.join(os.getcwd(), os.pardir)))
 from server import app, server
 from presentation import slide_order, prev_text, next_text, slide_orderDict
+
 
 # add the slides to the object space if they are in the slide order
 for x in os.listdir(os.getcwd() + "/slides"):
@@ -53,17 +55,17 @@ footerStyle = {
         "width"           : "100%"
 }
 containerStyle = {
-        "overflow":"hidden",
+        "overflow"       : "hidden",
         "scrollbar-color": "white ghostwhite",
-        "aspect-ratio": "1 / 1",
-        "width"       : "100%",
-        "height"      : "100%",
-        "background"  : "ghostwhite",
-        "position"    : "absolute",
-        "top"         : "0",
-        "left"        : "0",
-        "right"       : "0",
-        "bottom"      : "0",
+        "aspect-ratio"   : "1 / 1",
+        "width"          : "100%",
+        "height"         : "100%",
+        "background"     : "ghostwhite",
+        "position"       : "absolute",
+        "top"            : "0",
+        "left"           : "0",
+        "right"          : "0",
+        "bottom"         : "0",
 
 }
 
@@ -91,69 +93,72 @@ app.layout = dbc.Container(
                                 [
                                         dcc.Location(id="url", refresh=False),
 
-                                        html.Div(id="page-content", style={"width": "100%", "height": "100%",
-                                                                           "overflow-y":"scroll",
-                                          "overflow-x":"hidden","scrollbar-color": "grey ghostwhite","scrollbar-gutter": "stable" }),
+                                        html.Div(id="page-content", style={"width"           : "100%", "height": "100%",
+                                                                           "overflow-y"      : "scroll",
+                                                                           "overflow-x"      : "hidden",
+                                                                           "scrollbar-color" : "grey ghostwhite",
+                                                                           "scrollbar-gutter": "stable"}),
                                 ], style={"width": "100%", "height": "100%"}
                         ),
-                         ], style={"height": "90%"}),
-html.Table(
-                                children=[
-                                        html.Tr(
-                                                [
-                                                        html.Td('Fotios Branikas',
-                                                                style={"text-align": "center", "width": "33.3%"},
-                                                                className="text-white"),
-                                                        html.Td('National Technical University of Athens',
-                                                                style={"text-align": "center", "width": "33.3%"},
-                                                                className="text-white"),
-                                                        html.Td([
+                ], style={"height": "90%"}),
+                html.Table(
+                        children=[
+                                html.Tr(
+                                        [
+                                                html.Td('Fotios Branikas',
+                                                        style={"text-align": "center", "width": "33.3%"},
+                                                        className="text-white"),
+                                                html.Td('National Technical University of Athens',
+                                                        style={"text-align": "center", "width": "33.3%"},
+                                                        className="text-white"),
+                                                html.Td([
 
-                                                                dbc.ButtonGroup(
-                                                                        [
-                                                                                dbc.Button("", style={
+                                                        dbc.ButtonGroup(
+                                                                [
+                                                                        dbc.Button("", style={
+                                                                                "background": "SlateGray",
+                                                                                "border"    : "SlateGray",
+                                                                                "text-align": "center"},
+                                                                                   href=""
+                                                                                   ),
+                                                                        dbc.Button("<", style={
+                                                                                "background": "SlateGray",
+                                                                                "border"    : "SlateGray",
+                                                                                "text-align": "center"},
+                                                                                   id="previous-link",
+                                                                                   href="",
+                                                                                   ),
+                                                                        dbc.DropdownMenu(
+                                                                                id="slide-count", style={
                                                                                         "background": "SlateGray",
-                                                                                        "border"    : "SlateGray",
                                                                                         "text-align": "center"},
-                                                                                           href=""
-                                                                                           ),
-                                                                                dbc.Button("<", style={
-                                                                                        "background": "SlateGray",
-                                                                                        "border"    : "SlateGray",
-                                                                                        "text-align": "center"},
-                                                                                           id="previous-link",
-                                                                                           href="",
-                                                                                           ),
-                                                                                dbc.DropdownMenu(
-                                                                                        id="slide-count", style={
-                                                                                                "background": "SlateGray",
-                                                                                                "text-align": "center"},
-                                                                                        group=True,
-                                                                                        children=[
-                                                                                                dbc.DropdownMenuItem(
-                                                                                                        s,
-                                                                                                        href="/" + k, style={"font-size":"10px"},
-                                                                                                )
-                                                                                                for k, s in
-                                                                                                []
-                                                                                        ],
-                                                                                ),
-                                                                                dbc.Button(">", style={
-                                                                                        "background": "SlateGray",
-                                                                                        "border"    : "SlateGray",
-                                                                                        "text-align": "center"},
-                                                                                           id="next-link",
-                                                                                           href="",
-                                                                                           ),
-                                                                        ],
-                                                                        size="lg",
-                                                                        style={"background": "SlateGray"}
-                                                                )
-                                                        ], style={"text-align": "center", "width": "33.3%"},
-                                                                className="text-white"),
-                                                ]
-                                        )], style=footerStyle,
-                        ),
+                                                                                group=True,
+                                                                                children=[
+                                                                                        dbc.DropdownMenuItem(
+                                                                                                s,
+                                                                                                href="/" + k, style={
+                                                                                                        "font-size": "10px"},
+                                                                                        )
+                                                                                        for k, s in
+                                                                                        []
+                                                                                ],
+                                                                        ),
+                                                                        dbc.Button(">", style={
+                                                                                "background": "SlateGray",
+                                                                                "border"    : "SlateGray",
+                                                                                "text-align": "center"},
+                                                                                   id="next-link",
+                                                                                   href="",
+                                                                                   ),
+                                                                ],
+                                                                size="lg",
+                                                                style={"background": "SlateGray"}
+                                                        )
+                                                ], style={"text-align": "center", "width": "33.3%"},
+                                                        className="text-white"),
+                                        ]
+                                )], style=footerStyle,
+                ),
         ],
 )
 
@@ -218,6 +223,9 @@ def set_slide_state(pathname):
         return "/"
     if "/" in pathname:
         if pathname == "/":
+            with open("/mnt/smb/dashAppLog.txt", 'a') as file:
+                file.write("ip: {}\n".format(request.remote_addr))
+                file.close()
             return pathname
         return pathname.split("/")[1].strip()
 

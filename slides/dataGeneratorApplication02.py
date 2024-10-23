@@ -15,20 +15,20 @@ titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"fon
 appCode = html.Pre(["""
 for time:
     iNeighbourIndex = 0
-    ""","""while MessagesSent < """, ("NumberOfMessages"), """:
+    """, """while MessagesSent < """, ("NumberOfMessages"), """:
         if iNeighbourIndex > NumberOfNeighbours-1:
            iNeighbourIndex = 0
         iNeighbour = Neighbours[iNeighbourIndex]
         MPI_Irecv(""", ("MessageSize"), """, iNeighbour)
         MPI_Isend(MessageSize, iNeighbour)
         MessagesSent++
-        iNeighbourIndex++""","""
+        iNeighbourIndex++""", """
 
     MPI_Waitall(MessagesToSend, MessagesToRecv)
     
     """,
 
-    html.B(["""for i in """, ("rows"), """:
+                    html.B(["""for i in """, ("rows"), """:
         for j in """, ("columns"), """:
             for """, ("NumberOfExtraOperations"), """:
                 compute(i, j, u_previous, u_current)

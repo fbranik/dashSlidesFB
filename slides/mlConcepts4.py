@@ -12,7 +12,8 @@ title = "Machine Learning Concepts and Definitions"
 titleBar = html.H4(title, className="text-white p-4 mb-2 text-left", style={"font-size" : "30px",
                                                                             "background": "slategray"})
 
-decisionTrees = [html.P("- They find correlation between the features by making subsets of the dataset based on feature values."),
+decisionTrees = [html.P(
+    "- They find correlation between the features by making subsets of the dataset based on feature values."),
                  html.P("- Prone to overfitting when each subset represents small number of points")]
 ensembleMethods = [html.P("- They use multiple 'weak' learners to construct more accurate models.")]
 
@@ -95,7 +96,6 @@ def4 = html.Div(
 hyperparameterTuning = ("Various values "
                         "for the parameters of the structure of a model are tested, to find "
                         "an optimal configuration.")
-
 
 def5 = html.Div(
         [

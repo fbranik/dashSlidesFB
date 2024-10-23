@@ -57,5 +57,4 @@ content = [
         html.Br(),
         plot1,
 
-
 ]

@@ -17,7 +17,7 @@ appCode = html.Pre([""" for time:
 
      MPI_Waitall(MessagesToSend,MessagesToRecv)
 
-     """,html.B("MPI_Barrier(custom_communicator);", style={"font-size": "22px"}),"""
+     """, html.B("MPI_Barrier(custom_communicator);", style={"font-size": "22px"}), """
 
      computation(WorkingSetSize, NumberOfExtraOperations)"""], style={"font-size": "18px"})
 

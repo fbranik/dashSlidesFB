@@ -20,7 +20,6 @@ comment1 = ["In the case of the Compute Bound 16 load, computation time is large
 
 figure = [html.Br(), html.Img(src="assets/ComputeBound16_64Barriers.png", width="70%")]
 
-
 text1 = html.Div(
         [
                 dbc.Row(
