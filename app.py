@@ -223,7 +223,7 @@ def set_slide_state(pathname):
         return "/"
     if "/" in pathname:
         if pathname == "/":
-            with open("/mnt/smb/dashAppLog.txt", 'a') as file:
+            with open("/dashAppLog.txt", 'a') as file:
                 file.write("ip: {}\n".format(request.remote_addr))
                 file.close()
             return pathname
