@@ -1,7 +1,7 @@
 import requests
 import random
 import bs4 as bs
-import dash_html_components as html
+from dash import html
 # file for custom functions
 import pandas as pd
 
