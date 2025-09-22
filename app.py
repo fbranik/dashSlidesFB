@@ -241,6 +241,6 @@ def update_slide_count(current_slide):
 if __name__ == "__main__":
     app.run_server(
             host="0.0.0.0",
-            port=2011,
+            port=8000,
             debug=False,
     )
