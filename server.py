@@ -10,7 +10,7 @@ url_theme1 = dbc.themes.SANDSTONE
 # and the dash DataTable with the bootstrap theme.
 dbc_css = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
 
-app = dash.Dash(__name__, external_stylesheets=[url_theme1, dbc_css], serve_locally = False, url_base_pathname="/presentation/")
+app = dash.Dash(__name__, external_stylesheets=[url_theme1, dbc_css], serve_locally = False)
 app.config.suppress_callback_exceptions = True
 app.title = presentation_title
 app.clientside_callback(
